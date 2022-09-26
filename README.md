@@ -34,6 +34,7 @@ Sou Programador 👨‍💻, Pesquisador 👨‍🔬, Professor Técnico e Unive
 </div>
 <div>
   <h2>Certificações</h2>
+    <img width="10%" height="10%"  src="https://images.credly.com/size/680x680/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png"/>
   <img width="10%" height="10%"  src="https://user-images.githubusercontent.com/11337507/156904626-3f9891b6-e8ec-4288-b06f-622ff0f52d14.png"/>
   <img width="10%" height="10%"  src="https://images.credly.com/size/340x340/images/3be57d7c-55de-4119-9ca9-738e20c0fae0/Scrum-Foundation-Professional-Certificate-SFPC-2021_.png"/>
   <img width="10%" height="10%"  src="https://images.credly.com/size/340x340/images/165466d3-37d8-4dcb-821d-cb072cfd2a69/CertiProf-Badge-DEPC.png"/>
