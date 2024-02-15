@@ -36,6 +36,9 @@ Sou Programador 👨‍💻, Pesquisador 👨‍🔬, Professor Técnico e Unive
  <img width="10%" height="10%"  src="https://images.credly.com/size/680x680/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png"/>
  <img width="10%" height="10%"  src="https://user-images.githubusercontent.com/11337507/156904626-3f9891b6-e8ec-4288-b06f-622ff0f52d14.png"/>
  <img width="10%" height="10%"  src="https://images.credly.com/size/680x680/images/fc1352af-87fa-4947-ba54-398a0e63322e/security-compliance-and-identity-fundamentals-600x600.png"/>
+ <img width="10%" height="10%"  src="https://images.credly.com/images/70eb1e3f-d4de-4377-a062-b20fb29594ea/azure-data-fundamentals-600x600.png"/>
+ <img width="10%" height="10%"  src="https://images.credly.com/images/0c6d9839-f468-4adc-987d-5cfae4a9ee67/image.png"/>
+ <img width="10%" height="10%"  src="https://images.credly.com/images/2a6251f2-737b-4bf6-9190-d77570cc76fc/CERT-Fundamentals-Power-Platform.png"/>
  <img width="15%" height="15%"  src="https://josecastillolema.github.io/assets/images/posts/2018-04-01-redhat-academy/2018-04-01-redhat-academy.jpg"/>
  <img width="15%" height="15%"  src="https://logosmarcas.net/wp-content/uploads/2021/03/Google-Cloud-Logo.png"/>
  <img width="10%" height="10%"  src="https://mlohrktvfr9b.i.optimole.com/cb:tVDx~16b5e/w:702/h:702/q:mauto/https://www.nerdstickers.com.br/wp-content/uploads/2020/12/adesivo-extreme-go-horse-ns.png"/>
