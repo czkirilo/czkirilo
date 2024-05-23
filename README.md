@@ -9,9 +9,6 @@ Sou Programador 👨‍💻, Pesquisador 👨‍🔬, Professor Técnico e Unive
 <div align="center">
 <img width="85%" height="85%"  src="https://sm.ign.com/ign_pt/news/b/borat-2-fi/borat-2-first-promotional-image-released-amazon-prime-releas_s9qz.jpg"/>
 </div>
-<div align="center">
-<img width="85%" height="85%"  src="https://m.media-amazon.com/images/I/51Yyp+PyhoL._AC_SY300_SX300_.jpg"/>
-</div>
 <br>
 <div>
   <a href="https://www.facebook.com/caique.zaneti" target="_blank"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white"/></a>
