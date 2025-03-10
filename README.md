@@ -44,26 +44,4 @@ Sou Programador 👨‍💻, Pesquisador 👨‍🔬, Professor Técnico e Unive
  <img width="10%" height="10%"  src="https://mlohrktvfr9b.i.optimole.com/cb:tVDx~16b5e/w:702/h:702/q:mauto/https://www.nerdstickers.com.br/wp-content/uploads/2020/12/adesivo-extreme-go-horse-ns.png"/>
 </div>
 <div>
-  <h2>Linguagens e Frameworks</h2>
-  <img src=https://progress-bar.dev/70?title=HTML />
-  <img src=https://progress-bar.dev/60?title=CSS />
-  <img src=https://progress-bar.dev/75?title=JAVASCRIPT />
-  <img src=https://progress-bar.dev/90?title=JAVA  />
-  <img src=https://progress-bar.dev/80?title=CSHARP  />
-  <img src=https://progress-bar.dev/45?title=DELPHI  />
-  <img src=https://progress-bar.dev/55?title=PYTHON  />
-  <img src=https://progress-bar.dev/75?title=C  />
-  <img src=https://progress-bar.dev/50?title=PHP  />
-  <img src=https://progress-bar.dev/85?title=SQL  />
-  <img src=https://progress-bar.dev/60?title=KOTLIN  />
-  <img src=https://progress-bar.dev/65?title=VB  />
-  <img src=https://progress-bar.dev/70?title=REACT  />
-  <img src=https://progress-bar.dev/60?title=REACTNATIVE  />
-  <img src=https://progress-bar.dev/80?title=BOOTSTRAP  />
-   <img src=https://progress-bar.dev/65?title=ANGULAR  />
-  
-  
-  
-  
-  
 </div>
