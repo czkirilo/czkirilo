@@ -152,3 +152,10 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 > 🗓️  · 🔗 [Link](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xNS8Qj4AAAAJ&citation_for_view=xNS8Qj4AAAAJ:IjCSPb-OGe4C)
 ## Contato
 Suas informações de contato.
+
+**🧪 Recent Publications**
+*This section is updated automatically with my latest publications from Google Scholar*
+
+> ⚠️ **Error fetching publications**
+> Unable to retrieve publications from Google Scholar at this time.
+
