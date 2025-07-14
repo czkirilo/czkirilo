@@ -1,7 +1,4 @@
-- name: Install dependencies
-      run: |
-        pip install requests beautifulsoup4 lxml python-dateutil
-        
+       
     - name: Update README with publications
       run: |
         cat > update_scholar.py << 'EOF'
