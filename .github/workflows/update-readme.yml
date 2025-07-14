@@ -1,40 +1,160 @@
-name: Atualizar Publicacoes Google Scholar
+name: Update Google Scholar Publications
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # Todos os dias às 06h no Brasil
-  workflow_dispatch:
+    # Executa todos os dias às 6:00 UTC (3:00 AM BRT)
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Permite execução manual
 
 jobs:
-  update:
+  update-publications:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: 🔄 Clonar repositório
-        uses: actions/checkout@v3
-
-      - name: 🐍 Configurar Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-
-      - name: 📦 Instalar dependências
-        run: pip install beautifulsoup4 requests
-
-      - name: ⚙️ Executar script de atualização
-        env:
-          GOOGLE_SCHOLAR_URL: "https://scholar.google.com/citations?user=xNS8Qj4AAAAJ&hl=en"
-        run: python update_readme.py
-
-      - name: 🚀 Commit e push das alterações
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        pip install requests beautifulsoup4 lxml python-dateutil
+        
+    - name: Update README with publications
+      run: |
+        cat > update_scholar.py << 'EOF'
+        import requests
+        from bs4 import BeautifulSoup
+        import re
+        from datetime import datetime
+        import sys
+        
+        # URL do Google Scholar (substitua pela sua URL)
+        SCHOLAR_URL = "https://scholar.google.com/citations?user=xNS8Qj4AAAAJ&hl=pt-BR"
+        
+        def get_publications():
+            try:
+                headers = {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+                }
+                
+                response = requests.get(SCHOLAR_URL, headers=headers)
+                response.raise_for_status()
+                
+                soup = BeautifulSoup(response.content, 'html.parser')
+                
+                publications = []
+                
+                # Encontrar todas as publicações
+                pub_rows = soup.find_all('tr', class_='gsc_a_tr')
+                
+                for row in pub_rows[:5]:  # Apenas os 5 primeiros
+                    title_elem = row.find('a', class_='gsc_a_at')
+                    year_elem = row.find('span', class_='gsc_a_h')
+                    
+                    if title_elem and year_elem:
+                        title = title_elem.text.strip()
+                        year = year_elem.text.strip()
+                        
+                        # Construir link para o artigo
+                        article_link = "https://scholar.google.com" + title_elem['href']
+                        
+                        # Validar ano
+                        if year and year.isdigit():
+                            publications.append({
+                                'title': title,
+                                'year': int(year),
+                                'link': article_link
+                            })
+                
+                # Ordenar por ano decrescente
+                publications.sort(key=lambda x: x['year'], reverse=True)
+                
+                return publications[:5]
+                
+            except Exception as e:
+                print(f"Erro ao buscar publicações: {e}")
+                return None
+        
+        def update_readme(publications):
+            try:
+                with open('README.md', 'r', encoding='utf-8') as f:
+                    content = f.read()
+                
+                # Data e hora atual em formato brasileiro
+                now = datetime.now()
+                timestamp = now.strftime("%d/%m/%Y às %H:%M")
+                
+                if publications:
+                    # Criar seção de publicações
+                    pub_section = f"**📚 Últimas Publicações Acadêmicas (Atualizado em: {timestamp})**\n"
+                    pub_section += "*** Este tópico é atualizado automaticamente com base nas publicações indexadas no Google Scholar via GitHub Actions***\n\n"
+                    
+                    for pub in publications:
+                        pub_section += f"📘 **{pub['title']}** 🗓️ {pub['year']} · 🔗 [Link]({pub['link']})\n\n"
+                else:
+                    # Caso de erro
+                    pub_section = f"**📚 Últimas Publicações Acadêmicas (Atualizado em: {timestamp})**\n"
+                    pub_section += "*** Este tópico é atualizado automaticamente com base nas publicações indexadas no Google Scholar via GitHub Actions***\n\n"
+                    pub_section += "⚠️ **Erro**: Não foi possível buscar as publicações no momento. Tente novamente mais tarde.\n\n"
+                
+                # Padrão regex para encontrar e substituir a seção existente
+                pattern = r'\*\*📚 Últimas Publicações Acadêmicas.*?\n\n(?:.*?\n\n)*?(?=\*\*[^*]|\Z)'
+                
+                if re.search(pattern, content, re.DOTALL):
+                    # Substituir seção existente
+                    new_content = re.sub(pattern, pub_section, content, flags=re.DOTALL)
+                else:
+                    # Adicionar no final se não existir
+                    new_content = content + "\n\n" + pub_section
+                
+                with open('README.md', 'w', encoding='utf-8') as f:
+                    f.write(new_content)
+                
+                print("README atualizado com sucesso!")
+                return True
+                
+            except Exception as e:
+                print(f"Erro ao atualizar README: {e}")
+                return False
+        
+        def main():
+            print("Buscando publicações do Google Scholar...")
+            publications = get_publications()
+            
+            if publications:
+                print(f"Encontradas {len(publications)} publicações")
+                for pub in publications:
+                    print(f"- {pub['title']} ({pub['year']})")
+            else:
+                print("Nenhuma publicação encontrada ou erro na busca")
+            
+            success = update_readme(publications)
+            
+            if not success:
+                sys.exit(1)
+        
+        if __name__ == "__main__":
+            main()
+        EOF
+        
+        # Executar o script
+        python update_scholar.py
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Verificar se houve mudanças
+        if git diff --quiet; then
+          echo "Nenhuma mudança detectada no README"
+        else
           git add README.md
-          if git diff --cached --quiet; then
-            echo "✅ Nenhuma mudança no README.md"
-          else
-            git commit -m "📚 Atualiza publicações acadêmicas automaticamente"
-            git push
-          fi
-
+          git commit -m "🤖 Atualizar publicações do Google Scholar"
+          git push
+          echo "README atualizado e commitado com sucesso!"
+        fi
