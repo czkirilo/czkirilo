@@ -1,17 +1,98 @@
-# Seu Nome
+<h1 align="center">👨‍🔬 Prof. Msc. Caique Zaneti</h1>
 
-## Sobre
-Breve descrição sobre você e sua área de atuação.
+<p align="center">
+🎓 Doutorando · 👨‍🏫 Professor Técnico e Universitário · 💻 Programador · 🧪 Pesquisador
+</p>
 
-## Projetos
-Seus projetos em destaque.
+---
 
-## Contato
-- 📧 Email: seu.email@exemplo.com
-- 🎓 Google Scholar: [Seu Nome](https://scholar.google.com.br/citations?user=xNS8Qj4AAAAJ&hl=pt-BR)
+## 👨‍💻 Sobre Mim
 
-**🧪 Recent Publications**
-*This section is updated automatically with my latest publications from Google Scholar*
+Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo como professor, desenvolvedor e pesquisador, sempre buscando unir o rigor acadêmico com soluções práticas por meio da programação.
+
+---
+
+## 🧪 Áreas de Pesquisa
+
+| 🔬 Tópico                          | Descrição breve |
+|-----------------------------------|------------------|
+| 🤖 Inteligência Artificial        | Aprendizado de máquina, redes neurais, IA aplicada |
+| 📊 Ciência de Dados               | Extração de conhecimento, visualização e análise |
+| 🌐 IoT e Computação Ubíqua        | Ambientes inteligentes e sensoriamento |
+| 🎓 Tecnologias para Educação      | Ambientes virtuais, ensino adaptativo |
+| 🔒 Privacidade e Cibersegurança   | Dados sensíveis e segurança em sistemas digitais |
+
+---
+
+## 🛠️ Skills Técnicas
+
+### 👨‍💻 Linguagens
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
+
+### 🧰 Ferramentas e Frameworks
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+
+
+---
+
+## 📊 Estatísticas de GitHub
+
+<p align="center">
+  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=SEU_USUARIO_GITHUB&show_icons=true&theme=tokyonight" />
+  <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SEU_USUARIO_GITHUB&layout=compact&theme=tokyonight" />
+</p>
+
+<!-- Se quiser mostrar tempo de codificação via Wakatime -->
+<!--
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=seu_usuario_wakatime&theme=tokyonight" />
+</p>
+-->
+
+---
+
+
+
+🧾 Veja minhas pesquisas no:
+
+- [![Google Scholar](https://img.shields.io/badge/Google_Scholar-4285F4?style=flat-square&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?user=SEU_ID_AQUI)
+- [![ORCID](https://img.shields.io/badge/ORCID-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/SEU_ID_AQUI)
+- [![ResearchGate](https://img.shields.io/badge/ResearchGate-00CCBB?style=flat-square&logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/SEU_NOME)
+
+---
+
+## 🎯 Projetos em Destaque
+
+- 🔍 **[Sistema de Previsão Inteligente](https://github.com/seu-projeto)**  
+  _Modelagem preditiva com IA em ambientes educacionais_
+
+- 📡 **[IoT para Ambientes Inteligentes](https://github.com/seu-projeto)**  
+  _Sensores, redes e análise em tempo real_
+
+- 🎓 **[Plataforma de Ensino Adaptativo](https://github.com/seu-projeto)**  
+  _Ferramentas para personalização do ensino_
+
+---
+
+## 📫 Vamos nos conectar!
+
+- 🌐 [Meu Blog ou Portfólio](https://seusite.com)
+- 🧑‍💼 [LinkedIn](https://www.linkedin.com/in/seu-usuario)
+- 🧾 [Currículo Lattes](http://lattes.cnpq.br/SEU_ID)
+- 🐙 [GitHub](https://github.com/SEU_USUARIO_GITHUB)
+- ✉️ caique.zaneti@email.com
+
+---
+
+## 📚 Últimas Publicações Acadêmicas 
+* Este tópico é atualizado diariamente com base nas publicações indexadas no Google Academico via Github Actions*
 
 > 📘 **PROTÓTIPO DE GROWLAMP COM INTERFACE IOT PARA O CULTIVO DE PLANTAS EM AMBIENTES URBANOS**
 > 🗓️ 2024 · 🔗 [Link](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xNS8Qj4AAAAJ&citation_for_view=xNS8Qj4AAAAJ:LkGwnXOMwfcC)
