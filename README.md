@@ -158,4 +158,3 @@ Suas informações de contato.
 
 > ⚠️ **Error fetching publications**
 > Unable to retrieve publications from Google Scholar at this time.
-
