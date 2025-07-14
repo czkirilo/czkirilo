@@ -11,7 +11,7 @@ def get_google_scholar_publications(scholar_id):
     """
     try:
         # URL do perfil do Google Scholar
-        url = f"https://scholar.google.com/citations?user=xNS8Qj4AAAAJ&hl=en&oi=ao"
+        url = f"https://scholar.google.com/citations?user={scholar_id}&hl=en&oi=ao"
         
         # Headers para simular um navegador
         headers = {
@@ -116,29 +116,46 @@ def update_readme(publications):
         print(f"Erro ao atualizar README: {e}")
 
 def main():
+    print("=== Iniciando atualização do README ===")
+    print(f"Timestamp: {datetime.now().isoformat()}")
+    
+    # Verificar se o arquivo README existe
+    if not os.path.exists('README.md'):
+        print("ERRO: Arquivo README.md não encontrado!")
+        return
+    
     # Obter o ID do Google Scholar das variáveis de ambiente
     scholar_id = os.getenv('GOOGLE_SCHOLAR_ID')
     
     if not scholar_id:
-        print("Erro: GOOGLE_SCHOLAR_ID não definido!")
+        print("ERRO: GOOGLE_SCHOLAR_ID não definido!")
+        print("Certifique-se de definir o secret GOOGLE_SCHOLAR_ID no GitHub")
         return
     
-    print(f"Buscando publicações para o ID: {scholar_id}")
+    print(f"✅ GOOGLE_SCHOLAR_ID encontrado: {scholar_id}")
+    print(f"🔍 Buscando publicações para o ID: {scholar_id}")
     
     # Buscar publicações
     publications = get_google_scholar_publications(scholar_id)
     
     if publications is not None:
-        print(f"Encontradas {len(publications)} publicações")
-        for pub in publications[:3]:  # Mostrar apenas as 3 primeiras
-            print(f"- {pub['title']} ({pub['year']})")
+        print(f"✅ Encontradas {len(publications)} publicações")
+        
+        # Mostrar as primeiras publicações para debug
+        for i, pub in enumerate(publications[:3]):
+            print(f"  {i+1}. {pub['title']} ({pub['year']})")
+        
         if len(publications) > 3:
-            print(f"... e mais {len(publications) - 3} publicações")
+            print(f"  ... e mais {len(publications) - 3} publicações")
     else:
-        print("Falha ao buscar publicações")
+        print("❌ Falha ao buscar publicações")
+    
+    print("📝 Atualizando README.md...")
     
     # Atualizar README
     update_readme(publications)
+    
+    print("=== Processo concluído ===")
 
 if __name__ == "__main__":
     main()
