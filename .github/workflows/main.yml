@@ -1,8 +1,8 @@
-name: Update README with Publications
+name: Update README with Google Scholar Publications
 
 on:
   schedule:
-    - cron: '0 12 * * 1'  # every Monday at 12:00 UTC
+    - cron: '0 12 * * 1'  # Every Monday at 12:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install scholarly requests beautifulsoup4
+        run: pip install scholarly
 
       - name: Run script
         run: python update_publications.py
@@ -27,5 +27,6 @@ jobs:
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@users.noreply.github.com'
           git add README.md
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update publications section"
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update Google Scholar publications"
           git push
+
