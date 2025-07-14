@@ -9,8 +9,7 @@ Seus projetos em destaque.
 **🧪 Recent Publications**
 *This section is updated automatically with my latest publications from Google Scholar*
 
-> 📘 **Título do Artigo**
-> 🗓️ ano · 🔗 link
-
+> ⚠️ **Error fetching publications**
+> Unable to retrieve publications from Google Scholar at this time.
 ## Contato
 Suas informações de contato.
