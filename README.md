@@ -4,13 +4,9 @@
 🎓 Doutorando · 👨‍🏫 Professor Técnico e Universitário · 💻 Programador · 🧪 Pesquisador
 </p>
 
----
-
 ## 👨‍💻 Sobre Mim
 
 Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo como professor, desenvolvedor e pesquisador, sempre buscando unir o rigor acadêmico com soluções práticas por meio da programação.
-
----
 
 ## 🧪 Áreas de Pesquisa
 
