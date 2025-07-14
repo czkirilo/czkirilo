@@ -45,8 +45,8 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 ## 📊 Estatísticas de GitHub
 
 <p align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=SEU_USUARIO_GITHUB&show_icons=true&theme=tokyonight" />
-  <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SEU_USUARIO_GITHUB&layout=compact&theme=tokyonight" />
+  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=czkiriloB&show_icons=true&theme=tokyonight" />
+  <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=czkirilo&layout=compact&theme=tokyonight" />
 </p>
 
 <!-- Se quiser mostrar tempo de codificação via Wakatime -->
