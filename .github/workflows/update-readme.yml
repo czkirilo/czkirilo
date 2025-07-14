@@ -23,7 +23,7 @@ jobs:
 
       - name: ⚙️ Executar script de atualização
         env:
-          GOOGLE_SCHOLAR_URL: "https://scholar.google.com/citations?user=xNS8Qj4AAAAJ&hl=en"
+          GOOGLE_SCHOLAR_URL: "https://scholar.google.com/citations?user=xNS8Qj4AAAAJ&hl=pt-BR"
         run: python update_readme.py
 
       - name: 🚀 Commit e push das alterações
