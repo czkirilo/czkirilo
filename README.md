@@ -27,9 +27,11 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 ## 🛠️ Skills Técnicas
 
 ### 👨‍💻 Linguagens
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,wasm)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=py,r,c,cpp,latex,ts,js,html,css)](https://skillicons.dev)
 
 ### 🧰 Ferramentas e Frameworks
+[![My Skills](https://skillicons.dev/icons?i=pycharm,pytorch,arduino,raspberrypi,selenium,azure,firebase,mongodb,mysql,visualstudio)](https://skillicons.dev)
+
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
 ![Scikit-learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn)
