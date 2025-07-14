@@ -24,6 +24,47 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 
 ---
 
+## 🧭 Formação Acadêmica
+
+🎓 **Doutorado em Engenharia da Informação**  *(em andamento)*  
+📍 Universidade Federal do ABC – *UFABC* - Santo André - SP  
+📅 2025 – atual  
+🧾 *Tese: Sistema Especialista de Apoio ao Controle de Diabetes*
+🧪 *Linha de pesquisa: Processamento de Sinais Biológicos*
+
+⬇️
+
+🎓 **Mestrado em Engenharia de Produção – Biotecnologia**  
+📍 Universidade Paulista – *UNIP* - São Paulo - SP  
+📅 2016 – 2017  
+🧾 *Dissertação: Método Paraconsistente de Decisão Aplicado ao Six Sigma*
+🧪 *Linha de pesquisa: Métodos Quantitativos de Apoio a tomada de decisão em Engenharia de Produção*
+
+⬇️
+
+🎓 **Bacharelado em Ciência da Computação**  
+📍 Universidade Paulista – *UNIP* - São Paulo - SP  
+📅 2012 – 2015  
+🧠 *Iniciação Cientifica 1: Protótipo de um veículo em escala 1:10 que permita o controle de movimentos e telemetria através de um dispositivo móvel com sistema Android. Apoiado na Lógica Paraconsistente Evidencial Et*
+🔬 *Iniciação Cientifica 2: Processamento Digital de Imagens utilizando Redes Convolucionais na detecção de anomalias em câncer de mama*
+
+⬇️
+
+🎓 **Curso Técnico em Eletronica**  
+📍 ETEC Tereza Aparecida Cardoso Nunes de Oliveira - São Paulo - SP  
+📅 2009 – 2011  
+
+---
+
+## 💼 Experiência Acadêmica e Profissional
+
+- 👨‍🏫 **Professor** de cursos técnicos e de graduação (presencial e EAD)
+- 👨‍💻 **Desenvolvedor** de sistemas e soluções computacionais
+- 📚 **Pesquisador** com foco em soluções aplicadas com impacto social
+- 🎓 **Mentor** em projetos de iniciação científica, TCCs e maratonas de inovação
+
+---
+
 ## 🛠️ Skills Técnicas
 
 ### 👨‍💻 Linguagens
@@ -141,9 +182,3 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 
 > 📘 **STUDY OF THE FLOWCHART OF THE PARACONSISTENT ANNOTATED LOGIC (LPA) ALGORITHM TO SUPPORT DECISION MAKING IN PROJECT RECOUNT IN THE FUNCTION POINT ANALYSIS TECHNIQUE**
 > 🗓️  · 🔗 [Link](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xNS8Qj4AAAAJ&citation_for_view=xNS8Qj4AAAAJ:IjCSPb-OGe4C)
-
-**🧪 Recent Publications**
-*This section is updated automatically with my latest publications from Google Scholar*
-
-> ⚠️ **Error fetching publications**
-> Unable to retrieve publications from Google Scholar at this time.
