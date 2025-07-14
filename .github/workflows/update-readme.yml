@@ -28,12 +28,13 @@ jobs:
 
       - name: 🚀 Commit e push das alterações
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
           if git diff --cached --quiet; then
             echo "✅ Nenhuma mudança no README.md"
           else
             git commit -m "📚 Atualiza publicações acadêmicas automaticamente"
             git push
+          fi
 
