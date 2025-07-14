@@ -1,81 +1,142 @@
 import os
 import re
-import requests
-from bs4 import BeautifulSoup
 from datetime import datetime
 import time
+import json
 
-def get_google_scholar_publications(scholar_id):
+# Versão alternativa usando requests com parsing mais robusto
+def get_google_scholar_publications_alternative(scholar_id):
     """
-    Busca publicações do Google Scholar
+    Método alternativo para buscar publicações do Google Scholar
     """
+    import requests
+    from bs4 import BeautifulSoup
+    
     try:
-        # URL do perfil do Google Scholar
-        url = f"https://scholar.google.com/citations?user={scholar_id}&hl=en&oi=ao"
+        # URL com parâmetros para mostrar mais publicações
+        url = f"https://scholar.google.com/citations?user={scholar_id}&hl=en&cstart=0&pagesize=100"
         
-        # Headers para simular um navegador
+        # Headers simulando um navegador real
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'none',
+            'Sec-Fetch-User': '?1',
+            'Cache-Control': 'max-age=0',
         }
         
-        # Fazer a requisição
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
+        # Fazer requisição com session
+        session = requests.Session()
+        session.headers.update(headers)
         
-        # Parse do HTML
-        soup = BeautifulSoup(response.content, 'html.parser')
+        # Primeiro, tentar acessar a página inicial do Google Scholar
+        print("Acessando página inicial do Google Scholar...")
+        init_response = session.get("https://scholar.google.com", timeout=10)
+        time.sleep(2)
         
-        publications = []
+        # Agora acessar o perfil
+        print(f"Acessando perfil: {url}")
+        response = session.get(url, timeout=30)
         
-        # Encontrar todas as publicações
-        pub_rows = soup.find_all('tr', class_='gsc_a_tr')
-        
-        for row in pub_rows:
-            try:
-                # Título e link
-                title_elem = row.find('a', class_='gsc_a_at')
-                if not title_elem:
-                    continue
-                    
-                title = title_elem.get_text().strip()
-                link = "https://scholar.google.com" + title_elem.get('href', '')
-                
-                # Ano
-                year_elem = row.find('span', class_='gsc_a_h')
-                year = year_elem.get_text().strip() if year_elem else 'N/A'
-                
-                # Validar se o ano é um número válido
+        if response.status_code == 200:
+            print("Página carregada com sucesso!")
+            
+            # Salvar HTML para debug (opcional)
+            with open('debug_scholar.html', 'w', encoding='utf-8') as f:
+                f.write(response.text)
+            
+            soup = BeautifulSoup(response.text, 'html.parser')
+            
+            # Verificar se estamos bloqueados
+            if "blocked" in response.text.lower() or "captcha" in response.text.lower():
+                print("Bloqueado pelo Google Scholar")
+                return None
+            
+            # Buscar publicações usando diferentes seletores
+            publications = []
+            
+            # Método 1: Tabela padrão
+            rows = soup.select('tr.gsc_a_tr')
+            print(f"Método 1 - Encontradas {len(rows)} publicações")
+            
+            if not rows:
+                # Método 2: Buscar por classe alternativa
+                rows = soup.find_all('tr', {'class': 'gsc_a_tr'})
+                print(f"Método 2 - Encontradas {len(rows)} publicações")
+            
+            if not rows:
+                # Método 3: Buscar qualquer tr com link de publicação
+                rows = soup.find_all('tr')
+                rows = [row for row in rows if row.find('a', class_='gsc_a_at')]
+                print(f"Método 3 - Encontradas {len(rows)} publicações")
+            
+            for i, row in enumerate(rows):
                 try:
-                    year_int = int(year) if year != 'N/A' else 0
-                except ValueError:
-                    year_int = 0
-                
-                publications.append({
-                    'title': title,
-                    'year': year,
-                    'year_int': year_int,
-                    'link': link
-                })
-                
-            except Exception as e:
-                print(f"Erro ao processar publicação: {e}")
-                continue
-        
-        # Ordenar por ano decrescente
-        publications.sort(key=lambda x: x['year_int'], reverse=True)
-        
-        return publications
-        
-    except requests.RequestException as e:
-        print(f"Erro de requisição: {e}")
-        return None
+                    # Título
+                    title_link = row.find('a', class_='gsc_a_at')
+                    if not title_link:
+                        continue
+                    
+                    title = title_link.get_text().strip()
+                    href = title_link.get('href', '')
+                    full_link = f"https://scholar.google.com{href}" if href else "#"
+                    
+                    # Ano - múltiplas tentativas
+                    year = "N/A"
+                    year_elem = row.find('span', class_='gsc_a_h')
+                    if year_elem:
+                        year = year_elem.get_text().strip()
+                    else:
+                        # Tentar encontrar ano em qualquer span
+                        spans = row.find_all('span')
+                        for span in spans:
+                            text = span.get_text().strip()
+                            if text.isdigit() and len(text) == 4 and 1900 <= int(text) <= 2030:
+                                year = text
+                                break
+                    
+                    # Validar ano
+                    try:
+                        year_int = int(year) if year != "N/A" else 0
+                    except ValueError:
+                        year_int = 0
+                        year = "N/A"
+                    
+                    publications.append({
+                        'title': title,
+                        'year': year,
+                        'year_int': year_int,
+                        'link': full_link
+                    })
+                    
+                    print(f"  {i+1}. {title[:60]}... ({year})")
+                    
+                except Exception as e:
+                    print(f"Erro ao processar publicação {i+1}: {e}")
+                    continue
+            
+            # Ordenar por ano
+            publications.sort(key=lambda x: x['year_int'], reverse=True)
+            
+            return publications if publications else None
+            
+        else:
+            print(f"Erro HTTP: {response.status_code}")
+            return None
+            
     except Exception as e:
-        print(f"Erro geral: {e}")
+        print(f"Erro na busca alternativa: {e}")
         return None
 
-def update_readme(publications):
+def update_readme_with_fallback(publications):
     """
-    Atualiza o README.md com as publicações
+    Atualiza o README com informações mais detalhadas sobre o erro
     """
     try:
         # Ler o README atual
@@ -88,13 +149,19 @@ def update_readme(publications):
             publications_section += "*This section is updated automatically with my latest publications from Google Scholar*\n\n"
             
             for pub in publications:
-                publications_section += f"> 📘 **{pub['title']}**\n"
+                # Limitar título se for muito longo
+                title = pub['title']
+                if len(title) > 100:
+                    title = title[:97] + "..."
+                
+                publications_section += f"> 📘 **{title}**\n"
                 publications_section += f"> 🗓️ {pub['year']} · 🔗 [Link]({pub['link']})\n\n"
         else:
             publications_section = "**🧪 Recent Publications**\n"
             publications_section += "*This section is updated automatically with my latest publications from Google Scholar*\n\n"
             publications_section += "> ⚠️ **Error fetching publications**\n"
-            publications_section += "> Unable to retrieve publications from Google Scholar at this time.\n\n"
+            publications_section += f"> Unable to retrieve publications from Google Scholar at this time.\n"
+            publications_section += f"> Last attempt: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n"
         
         # Encontrar e substituir a seção existente
         pattern = r'(\*\*🧪 Recent Publications\*\*.*?)(?=\n\*\*[^*]|\n##|\n#|\Z)'
@@ -116,7 +183,7 @@ def update_readme(publications):
         print(f"Erro ao atualizar README: {e}")
 
 def main():
-    print("=== Iniciando atualização do README ===")
+    print("=== Google Scholar Publications Updater ===")
     print(f"Timestamp: {datetime.now().isoformat()}")
     
     # Verificar se o arquivo README existe
@@ -124,38 +191,28 @@ def main():
         print("ERRO: Arquivo README.md não encontrado!")
         return
     
-    # Obter o ID do Google Scholar das variáveis de ambiente
+    # Obter o ID do Google Scholar
     scholar_id = os.getenv('GOOGLE_SCHOLAR_ID')
     
     if not scholar_id:
         print("ERRO: GOOGLE_SCHOLAR_ID não definido!")
-        print("Certifique-se de definir o secret GOOGLE_SCHOLAR_ID no GitHub")
         return
     
-    print(f"✅ GOOGLE_SCHOLAR_ID encontrado: {scholar_id}")
-    print(f"🔍 Buscando publicações para o ID: {scholar_id}")
+    print(f"Google Scholar ID: {scholar_id}")
     
-    # Buscar publicações
-    publications = get_google_scholar_publications(scholar_id)
+    # Primeira tentativa com método principal
+    print("\n=== Tentativa 1: Método Principal ===")
+    publications = get_google_scholar_publications_alternative(scholar_id)
     
-    if publications is not None:
-        print(f"✅ Encontradas {len(publications)} publicações")
-        
-        # Mostrar as primeiras publicações para debug
-        for i, pub in enumerate(publications[:3]):
-            print(f"  {i+1}. {pub['title']} ({pub['year']})")
-        
-        if len(publications) > 3:
-            print(f"  ... e mais {len(publications) - 3} publicações")
+    if publications:
+        print(f"✅ Sucesso! Encontradas {len(publications)} publicações")
     else:
-        print("❌ Falha ao buscar publicações")
-    
-    print("📝 Atualizando README.md...")
+        print("❌ Método principal falhou")
     
     # Atualizar README
-    update_readme(publications)
+    update_readme_with_fallback(publications)
     
-    print("=== Processo concluído ===")
+    print("\n=== Processo concluído ===")
 
 if __name__ == "__main__":
     main()
