@@ -27,10 +27,7 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 ## 🛠️ Skills Técnicas
 
 ### 👨‍💻 Linguagens
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,wasm)](https://skillicons.dev)
 
 ### 🧰 Ferramentas e Frameworks
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter)
@@ -45,16 +42,8 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 ## 📊 Estatísticas de GitHub
 
 <p align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=czkiriloB&show_icons=true&theme=tokyonight" />
   <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=czkirilo&layout=compact&theme=tokyonight" />
 </p>
-
-<!-- Se quiser mostrar tempo de codificação via Wakatime -->
-<!--
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=seu_usuario_wakatime&theme=tokyonight" />
-</p>
--->
 
 ---
 
@@ -150,11 +139,4 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 
 > 📘 **STUDY OF THE FLOWCHART OF THE PARACONSISTENT ANNOTATED LOGIC (LPA) ALGORITHM TO SUPPORT DECISION MAKING IN PROJECT RECOUNT IN THE FUNCTION POINT ANALYSIS TECHNIQUE**
 > 🗓️  · 🔗 [Link](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xNS8Qj4AAAAJ&citation_for_view=xNS8Qj4AAAAJ:IjCSPb-OGe4C)
-## Contato
-Suas informações de contato.
 
-**🧪 Recent Publications**
-*This section is updated automatically with my latest publications from Google Scholar*
-
-> ⚠️ **Error fetching publications**
-> Unable to retrieve publications from Google Scholar at this time.
