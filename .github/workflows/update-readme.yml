@@ -1,4 +1,4 @@
-name: Atualizar README com Publicações do Google Scholar
+name: Atualizar README com Publicações do Google Scholar 
 
 on:
   schedule:
