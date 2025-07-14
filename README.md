@@ -10,6 +10,7 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 
 ## 🧪 Áreas de Pesquisa
 
+<p align="center">
 | 🔬 Tópico                          | Descrição breve |
 |-----------------------------------|------------------|
 | 🤖 Inteligência Artificial        | Aprendizado de máquina, redes neurais, IA aplicada |
@@ -17,8 +18,10 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 | 🌐 IoT e Computação Ubíqua        | Ambientes inteligentes e sensoriamento |
 | 🎓 Tecnologias para Educação      | Ambientes virtuais, ensino adaptativo |
 | 🔒 Privacidade e Cibersegurança   | Dados sensíveis e segurança em sistemas digitais |
+</p>
 
----
+
+--
 
 ## 🧭 Formação Acadêmica
 
