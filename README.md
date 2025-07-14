@@ -10,7 +10,6 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 
 ## 🧪 Áreas de Pesquisa
 
-<p align="center">
 | 🔬 Tópico                          | Descrição breve |
 |-----------------------------------|------------------|
 | 🤖 Inteligência Artificial        | Aprendizado de máquina, redes neurais, IA aplicada |
@@ -18,10 +17,6 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 | 🌐 IoT e Computação Ubíqua        | Ambientes inteligentes e sensoriamento |
 | 🎓 Tecnologias para Educação      | Ambientes virtuais, ensino adaptativo |
 | 🔒 Privacidade e Cibersegurança   | Dados sensíveis e segurança em sistemas digitais |
-</p>
-
-
---
 
 ## 🧭 Formação Acadêmica
 
@@ -53,16 +48,6 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 📍 ETEC Tereza Aparecida Cardoso Nunes de Oliveira - São Paulo - SP  
 📅 2009 – 2011  
 
----
-
-## 💼 Experiência Acadêmica e Profissional
-
-- 👨‍🏫 **Professor** de cursos técnicos e de graduação (presencial e EAD)
-- 👨‍💻 **Desenvolvedor** de sistemas e soluções computacionais
-- 📚 **Pesquisador** com foco em soluções aplicadas com impacto social
-- 🎓 **Mentor** em projetos de iniciação científica, TCCs e maratonas de inovação
-
----
 
 ## 🛠️ Skills Técnicas
 
@@ -71,13 +56,6 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 
 ### 🧰 Ferramentas e Frameworks
 [![My Skills](https://skillicons.dev/icons?i=pycharm,pytorch,arduino,raspberrypi,selenium,azure,firebase,mongodb,mysql,visualstudio)](https://skillicons.dev)
-
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
-![Scikit-learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-
 
 ---
 
