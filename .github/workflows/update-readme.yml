@@ -2,13 +2,12 @@ name: Atualizar README com Publicações do Google Scholar
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # Executa diariamente às 06:00 (horário de Brasília)
-  workflow_dispatch:      # Permite execução manual no GitHub
+    - cron: '0 9 * * *'  # Todos os dias às 06h no horário de Brasília
+  workflow_dispatch:
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-    name: Atualizar README.md
     steps:
 
       - name: 🔄 Clonar repositório
@@ -24,7 +23,7 @@ jobs:
 
       - name: ⚙️ Executar script de atualização
         env:
-          GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+          GOOGLE_SCHOLAR_URL: "https://scholar.google.com/citations?user=xNS8Qj4AAAAJ&hl=en"
         run: python update_readme.py
 
       - name: 🚀 Commit e push das alterações
@@ -37,4 +36,3 @@ jobs:
           else
             git commit -m "📚 Atualiza publicações acadêmicas automaticamente"
             git push
-          fi
