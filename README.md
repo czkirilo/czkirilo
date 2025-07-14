@@ -123,5 +123,7 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 
 ---
 
-## 📚 Últimas Publicações Acadêmicas 
-* Este tópico é atualizado diariamente com base nas publicações indexadas no Google Academico via Github Actions*
+## 📚 Últimas Publicações Acadêmicas (Atualizado em: 2025-07-14)
+* Este tópico é atualizado automaticamente com base nas publicações indexadas no Google Scholar via GitHub Actions*
+
+> ⚠️ **Erro ao buscar publicações no momento**
