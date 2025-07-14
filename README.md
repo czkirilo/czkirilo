@@ -182,3 +182,10 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 
 > 📘 **STUDY OF THE FLOWCHART OF THE PARACONSISTENT ANNOTATED LOGIC (LPA) ALGORITHM TO SUPPORT DECISION MAKING IN PROJECT RECOUNT IN THE FUNCTION POINT ANALYSIS TECHNIQUE**
 > 🗓️  · 🔗 [Link](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xNS8Qj4AAAAJ&citation_for_view=xNS8Qj4AAAAJ:IjCSPb-OGe4C)
+
+**🧪 Recent Publications**
+*This section is updated automatically with my latest publications from Google Scholar*
+
+> ⚠️ **Error fetching publications**
+> Unable to retrieve publications from Google Scholar at this time.
+
