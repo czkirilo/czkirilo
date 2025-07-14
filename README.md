@@ -1,17 +1,16 @@
-<h1 align="center">👋 Hello and welcome! I'm Prof. Msc. Caique Zaneti</h1>
-<p align="center">
-  Software Engineer 👨‍💻 | Researcher 👨‍🔬 | Technical and University Professor 👨‍🏫  
-</p>
+# Seu Nome
 
----
+## Sobre
+Breve descrição sobre você e sua área de atuação.
 
-### 🧪 Recent Publications
+## Projetos
+Seus projetos em destaque.
 
-_This section is updated automatically with my latest publications from Google Scholar, ORCID and ResearchGate._
+**🧪 Recent Publications**
+*This section is updated automatically with my latest publications from Google Scholar*
 
-<!--PUBLICATIONS-->
+> 📘 **Título do Artigo**
+> 🗓️ ano · 🔗 link
 
----
-
-📡 **Connect with me**  
-[ORCID](https://orcid.org/0000-0001-5667-0861) • [Google Scholar](https://scholar.google.com/citations?user=xNS8Qj4AAAAJ) • [ResearchGate](https://www.researchgate.net/profile/Caique-Kirilo)
+## Contato
+Suas informações de contato.
