@@ -1,0 +1,44 @@
+
+name: Update README with Google Scholar Publications
+
+on:
+  schedule:
+    # Executa diariamente às 6:00 UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Permite execução manual
+  push:
+    branches: [ main ]
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        pip install requests beautifulsoup4 lxml
+        
+    - name: Update README with publications
+      run: python update_readme.py
+      env:
+        GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add README.md
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "📚 Update publications from Google Scholar"
+          git push
+        fi

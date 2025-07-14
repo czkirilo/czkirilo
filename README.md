@@ -10,7 +10,8 @@
 _This section is updated automatically with my latest publications from Google Scholar, ORCID and ResearchGate._
 
 <!--PUBLICATIONS-->
-> ❌ Error loading Google Scholar: Cannot Fetch from Google Scholar.
 
-> ❌ Error loading ORCID: 'NoneType' object has no attribute 'get'
-<!--PUBLICATIONS-->
+---
+
+📡 **Connect with me**  
+[ORCID](https://orcid.org/0000-0001-5667-0861) • [Google Scholar](https://scholar.google.com/citations?user=xNS8Qj4AAAAJ) • [ResearchGate](https://www.researchgate.net/profile/Caique-Kirilo)
