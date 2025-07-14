@@ -23,15 +23,15 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 🎓 **Doutorado em Engenharia da Informação**  *(em andamento)*  
 📍 Universidade Federal do ABC – *UFABC* - Santo André - SP  
 📅 2025 – atual  
-🧾 *Tese: Sistema Especialista de Apoio ao Controle de Diabetes*
-🧪 *Linha de pesquisa: Processamento de Sinais Biológicos*
+🧾 *Tese: Sistema Especialista de Apoio ao Controle de Diabetes*  
+🧪 *Linha de pesquisa: Processamento de Sinais Biológicos*  
 
 ⬇️
 
 🎓 **Mestrado em Engenharia de Produção**  
 📍 Universidade Paulista – *UNIP* - São Paulo - SP  
 📅 2016 – 2017  
-🧾 *Dissertação: Método Paraconsistente de Decisão Aplicado ao Six Sigma*
+🧾 *Dissertação: Método Paraconsistente de Decisão Aplicado ao Six Sigma*  
 🧪 *Linha de pesquisa: Métodos Quantitativos de Apoio a tomada de decisão em Engenharia de Produção*
 
 ⬇️
@@ -39,7 +39,7 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 🎓 **Bacharelado em Ciência da Computação**  
 📍 Universidade Paulista – *UNIP* - São Paulo - SP  
 📅 2012 – 2015  
-🧠 *Iniciação Cientifica 1: Protótipo de um veículo em escala 1:10 que permita o controle de movimentos e telemetria através de um dispositivo móvel com sistema Android. Apoiado na Lógica Paraconsistente Evidencial Et*
+🧠 *Iniciação Cientifica 1: Protótipo de um veículo em escala 1:10 que permita o controle de movimentos e telemetria através de um dispositivo móvel com sistema Android. Apoiado na Lógica Paraconsistente Evidencial Et*  
 🔬 *Iniciação Cientifica 2: Processamento Digital de Imagens utilizando Redes Convolucionais na detecção de anomalias em câncer de mama*
 
 ⬇️
