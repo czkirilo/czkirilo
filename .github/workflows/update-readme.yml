@@ -1,347 +1,62 @@
-       
-    - name: Update README with publications
-      run: |
-        cat > update_scholar.py << 'EOF'
-        import requests
-        from bs4 import BeautifulSoup
-        import re
-        from datetime import datetime
-        import sys
-        import time
-        import random
-        
-        # URL do Google Scholar (substitua pela sua URL)
-        SCHOLAR_URL = "https://scholar.google.com/citations?user=xNS8Qj4AAAAJ&hl=pt-BR"
-        
-        def get_random_user_agent():
-            """Retorna um User-Agent aleatório"""
-            user_agents = [
-                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/121.0',
-                'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/121.0',
-            ]
-            return random.choice(user_agents)
-        
-        def create_session():
-            """Cria uma sessão com configurações anti-detecção"""
-            session = requests.Session()
-            
-            session.headers.update({
-                'User-Agent': get_random_user_agent(),
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-                'Accept-Language': 'pt-BR,pt;q=0.9,en;q=0.8',
-                'Accept-Encoding': 'gzip, deflate, br',
-                'Connection': 'keep-alive',
-                'Upgrade-Insecure-Requests': '1',
-                'Sec-Fetch-Dest': 'document',
-                'Sec-Fetch-Mode': 'navigate',
-                'Sec-Fetch-Site': 'none',
-                'Cache-Control': 'max-age=0',
-            })
-            
-            return session
-        
-        def get_publications():
-            session = create_session()
-            
-            try:
-                print(f"Fazendo requisição para: {SCHOLAR_URL}")
-                
-                # Primeiro, acessar a página principal
-                try:
-                    main_response = session.get("https://scholar.google.com", timeout=30)
-                    print(f"Status página principal: {main_response.status_code}")
-                    time.sleep(random.uniform(2, 5))
-                except:
-                    print("Falha ao acessar página principal")
-                
-                # Múltiplas tentativas com diferentes estratégias
-                max_retries = 3
-                for attempt in range(max_retries):
-                    try:
-                        print(f"Tentativa {attempt + 1}/{max_retries}")
-                        
-                        # Atualizar User-Agent
-                        session.headers.update({'User-Agent': get_random_user_agent()})
-                        
-                        # Delay aleatório
-                        if attempt > 0:
-                            delay = random.uniform(10, 30)
-                            print(f"Aguardando {delay:.1f} segundos...")
-                            time.sleep(delay)
-                        
-                        response = session.get(SCHOLAR_URL, timeout=30)
-                        
-                        if response.status_code == 200:
-                            print("Requisição bem-sucedida!")
-                            break
-                        elif response.status_code == 403:
-                            print("Erro 403: Acesso negado")
-                            if attempt < max_retries - 1:
-                                continue
-                        elif response.status_code == 429:
-                            print("name: Update Google Scholar Publications
+name: Update README with Google Scholar Publications
 
 on:
   schedule:
-    # Executa todos os dias às 6:00 UTC (3:00 AM BRT)
+    # Executa diariamente às 6:00 UTC
     - cron: '0 6 * * *'
   workflow_dispatch: # Permite execução manual
+  push:
+    branches: [ main, master ] # Suporte para main e master
+
+permissions:
+  contents: write # Permissão para escrever no repositório
 
 jobs:
-  update-publications:
+  update-readme:
     runs-on: ubuntu-latest
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      
-    - name: Set up Python
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Setup Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
         
     - name: Install dependencies
       run: |
-        pip install requests beautifulsoup4 lxml python-dateutil
+        pip install requests beautifulsoup4 lxml
+        
+    - name: Debug - Check environment
+      run: |
+        echo "Current directory: $(pwd)"
+        echo "Files in directory:"
+        ls -la
+        echo "Branch: ${{ github.ref }}"
+        echo "Repository: ${{ github.repository }}"
         
     - name: Update README with publications
+      run: python update_readme.py
+        
+    - name: Check for changes
+      id: verify-changed-files
       run: |
-        cat > update_scholar.py << 'EOF'
-        import requests
-        from bs4 import BeautifulSoup
-        import re
-        from datetime import datetime
-        import sys
-        import time
-        
-        # URL do Google Scholar (substitua pela sua URL)
-        SCHOLAR_URL = "https://scholar.google.com/citations?user=SEU_USER_ID&hl=pt"
-        
-        def get_publications():
-            try:
-                headers = {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-                    'Accept-Language': 'pt-BR,pt;q=0.9,en;q=0.8',
-                    'Accept-Encoding': 'gzip, deflate, br',
-                    'Connection': 'keep-alive',
-                    'Upgrade-Insecure-Requests': '1',
-                }
-                
-                print(f"Fazendo requisição para: {SCHOLAR_URL}")
-                
-                # Fazer requisição com retry
-                max_retries = 3
-                for attempt in range(max_retries):
-                    try:
-                        response = requests.get(SCHOLAR_URL, headers=headers, timeout=30)
-                        response.raise_for_status()
-                        break
-                    except requests.exceptions.RequestException as e:
-                        print(f"Tentativa {attempt + 1} falhou: {e}")
-                        if attempt < max_retries - 1:
-                            time.sleep(5)
-                        else:
-                            raise
-                
-                print(f"Status da resposta: {response.status_code}")
-                
-                soup = BeautifulSoup(response.content, 'html.parser')
-                
-                publications = []
-                
-                # Múltiplos seletores para encontrar publicações
-                selectors = [
-                    'tr.gsc_a_tr',
-                    '.gsc_a_tr',
-                    'tr[class*="gsc_a"]',
-                    '.gs_ri',
-                    '[data-lid]'
-                ]
-                
-                pub_rows = []
-                for selector in selectors:
-                    pub_rows = soup.select(selector)
-                    if pub_rows:
-                        print(f"Encontradas {len(pub_rows)} publicações com seletor: {selector}")
-                        break
-                
-                if not pub_rows:
-                    print("Nenhuma publicação encontrada com os seletores padrão")
-                    # Tentar encontrar por padrões de texto
-                    all_links = soup.find_all('a')
-                    for link in all_links:
-                        if link.get('href') and 'citations?view_op=view_citation' in link.get('href', ''):
-                            print(f"Link encontrado: {link.text[:50]}...")
-                    return None
-                
-                for i, row in enumerate(pub_rows[:10]):  # Pegar mais para filtrar depois
-                    try:
-                        # Múltiplas tentativas para encontrar título
-                        title_elem = None
-                        title_selectors = [
-                            'a.gsc_a_at',
-                            '.gsc_a_at',
-                            'a[href*="citations?view_op=view_citation"]',
-                            '.gs_rt a'
-                        ]
-                        
-                        for selector in title_selectors:
-                            title_elem = row.select_one(selector)
-                            if title_elem:
-                                break
-                        
-                        if not title_elem:
-                            continue
-                        
-                        title = title_elem.text.strip()
-                        if not title:
-                            continue
-                        
-                        # Múltiplas tentativas para encontrar ano
-                        year_elem = None
-                        year_selectors = [
-                            'span.gsc_a_h',
-                            '.gsc_a_h',
-                            '.gsc_a_y',
-                            'span[class*="year"]'
-                        ]
-                        
-                        for selector in year_selectors:
-                            year_elem = row.select_one(selector)
-                            if year_elem:
-                                break
-                        
-                        # Se não encontrou ano na linha, procurar por padrões de ano no texto
-                        year_text = ""
-                        if year_elem:
-                            year_text = year_elem.text.strip()
-                        else:
-                            # Procurar por padrão de ano (4 dígitos entre 1900-2030)
-                            year_match = re.search(r'\b(19|20)\d{2}\b', row.text)
-                            if year_match:
-                                year_text = year_match.group()
-                        
-                        # Construir link para o artigo
-                        article_link = "https://scholar.google.com" + title_elem['href']
-                        
-                        # Validar e processar ano
-                        year = None
-                        if year_text and year_text.isdigit():
-                            year_int = int(year_text)
-                            if 1900 <= year_int <= 2030:
-                                year = year_int
-                        
-                        if year:
-                            publications.append({
-                                'title': title,
-                                'year': year,
-                                'link': article_link
-                            })
-                            print(f"Publicação {i+1}: {title[:50]}... ({year})")
-                    
-                    except Exception as e:
-                        print(f"Erro ao processar publicação {i+1}: {e}")
-                        continue
-                
-                if not publications:
-                    print("Nenhuma publicação válida encontrada")
-                    # Debug: mostrar estrutura da página
-                    print("Primeiros 500 caracteres da página:")
-                    print(soup.text[:500])
-                    return None
-                
-                # Ordenar por ano decrescente
-                publications.sort(key=lambda x: x['year'], reverse=True)
-                
-                # Retornar apenas os 5 mais recentes
-                return publications[:5]
-                
-            except Exception as e:
-                print(f"Erro ao buscar publicações: {e}")
-                import traceback
-                traceback.print_exc()
-                return None
-        
-        def update_readme(publications):
-            try:
-                with open('README.md', 'r', encoding='utf-8') as f:
-                    content = f.read()
-                
-                # Data e hora atual em formato brasileiro
-                now = datetime.now()
-                timestamp = now.strftime("%d/%m/%Y às %H:%M")
-                
-                if publications:
-                    # Criar seção de publicações
-                    pub_section = f"**📚 Últimas Publicações Acadêmicas (Atualizado em: {timestamp})**\n"
-                    pub_section += "*** Este tópico é atualizado automaticamente com base nas publicações indexadas no Google Scholar via GitHub Actions***\n\n"
-                    
-                    for pub in publications:
-                        pub_section += f"📘 **{pub['title']}** 🗓️ {pub['year']} · 🔗 [Link]({pub['link']})\n\n"
-                else:
-                    # Caso de erro
-                    pub_section = f"**📚 Últimas Publicações Acadêmicas (Atualizado em: {timestamp})**\n"
-                    pub_section += "*** Este tópico é atualizado automaticamente com base nas publicações indexadas no Google Scholar via GitHub Actions***\n\n"
-                    pub_section += "⚠️ **Erro**: Não foi possível buscar as publicações no momento. Tente novamente mais tarde.\n\n"
-                
-                # Padrão regex para encontrar e substituir a seção existente
-                pattern = r'\*\*📚 Últimas Publicações Acadêmicas.*?\n\n(?:.*?\n\n)*?(?=\*\*[^*]|\Z)'
-                
-                if re.search(pattern, content, re.DOTALL):
-                    # Substituir seção existente
-                    new_content = re.sub(pattern, pub_section, content, flags=re.DOTALL)
-                else:
-                    # Adicionar no final se não existir
-                    new_content = content + "\n\n" + pub_section
-                
-                with open('README.md', 'w', encoding='utf-8') as f:
-                    f.write(new_content)
-                
-                print("README atualizado com sucesso!")
-                return True
-                
-            except Exception as e:
-                print(f"Erro ao atualizar README: {e}")
-                return False
-        
-        def main():
-            print("Buscando publicações do Google Scholar...")
-            publications = get_publications()
-            
-            if publications:
-                print(f"Encontradas {len(publications)} publicações")
-                for pub in publications:
-                    print(f"- {pub['title']} ({pub['year']})")
-            else:
-                print("Nenhuma publicação encontrada ou erro na busca")
-            
-            success = update_readme(publications)
-            
-            if not success:
-                sys.exit(1)
-        
-        if __name__ == "__main__":
-            main()
-        EOF
-        
-        # Executar o script
-        python update_scholar.py
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+          echo "Changes detected in README.md"
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+          echo "No changes in README.md"
+        fi
         
     - name: Commit and push changes
+      if: steps.verify-changed-files.outputs.changed == 'true'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        
-        # Verificar se houve mudanças
-        if git diff --quiet; then
-          echo "Nenhuma mudança detectada no README"
-        else
-          git add README.md
-          git commit -m "🤖 Atualizar publicações do Google Scholar"
-          git push
-          echo "README atualizado e commitado com sucesso!"
-        fi
+        git add README.md
+        git commit -m "📚 Update publications from Google Scholar [automated]"
+        git push
