@@ -1,12 +1,12 @@
-name: Atualizar README com Publicações do Google Scholar
+name: Atualizar Publicacoes Google Scholar
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # Todos os dias às 06h horário de Brasília
+    - cron: '0 9 * * *'  # Todos os dias às 06h no Brasil
   workflow_dispatch:
 
 jobs:
-  update-readme:
+  update:
     runs-on: ubuntu-latest
 
     steps:
@@ -36,3 +36,4 @@ jobs:
           else
             git commit -m "📚 Atualiza publicações acadêmicas automaticamente"
             git push
+
