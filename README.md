@@ -28,7 +28,7 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 
 ⬇️
 
-🎓 **Mestrado em Engenharia de Produção – Biotecnologia**  
+🎓 **Mestrado em Engenharia de Produção**  
 📍 Universidade Paulista – *UNIP* - São Paulo - SP  
 📅 2016 – 2017  
 🧾 *Dissertação: Método Paraconsistente de Decisão Aplicado ao Six Sigma*
@@ -57,16 +57,11 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 ### 🧰 Ferramentas e Frameworks
 [![My Skills](https://skillicons.dev/icons?i=pycharm,pytorch,arduino,raspberrypi,selenium,azure,firebase,mongodb,mysql,visualstudio)](https://skillicons.dev)
 
----
-
 ## 📊 Estatísticas de GitHub
 
 <p align="center">
   <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=czkirilo&layout=compact&theme=tokyonight" />
 </p>
-
----
-
 
 
 🧾 Veja minhas pesquisas no:
