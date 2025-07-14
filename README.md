@@ -10,12 +10,7 @@
 _This section is updated automatically with my latest publications from Google Scholar, ORCID and ResearchGate._
 
 <!--PUBLICATIONS-->
-> 📘 **Organizational climate assessment using the paraconsistent decision method**  
-> 🗓️ 2018
+> ❌ Error loading Google Scholar: Cannot Fetch from Google Scholar.
 
-> 📘 **Using logic concepts in software measurement**  
-> 🗓️ 2018
-
-> 📘 **Método paraconsistente de decisão aplicado ao seis sigma**  
-> 🗓️ 2017
+> ❌ Error loading ORCID: 'NoneType' object has no attribute 'get'
 <!--PUBLICATIONS-->
