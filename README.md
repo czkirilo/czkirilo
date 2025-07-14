@@ -15,6 +15,6 @@ Seus projetos em destaque.
 
 > ⚠️ **Error fetching publications**
 > Unable to retrieve publications from Google Scholar at this time.
-> Last attempt: 2025-07-14 14:00:06 UTC
+> Last attempt: 2025-07-14 14:11:50 UTC
 ## Contato
 Suas informações de contato.
