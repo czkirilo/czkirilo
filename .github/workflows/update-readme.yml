@@ -1,15 +1,15 @@
-name: Atualizar README com Publicações do Google Scholar 
+name: Atualizar README com Publicações do Google Scholar
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # Todos os dias às 06h no horário de Brasília
+    - cron: '0 9 * * *'  # Todos os dias às 06h horário de Brasília
   workflow_dispatch:
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-    steps:
 
+    steps:
       - name: 🔄 Clonar repositório
         uses: actions/checkout@v3
 
@@ -23,7 +23,7 @@ jobs:
 
       - name: ⚙️ Executar script de atualização
         env:
-          GOOGLE_SCHOLAR_URL: "https://scholar.google.com/citations?user=xNS8Qj4AAAAJ&hl=pt-BR"
+          GOOGLE_SCHOLAR_URL: "https://scholar.google.com/citations?user=xNS8Qj4AAAAJ&hl=en"
         run: python update_readme.py
 
       - name: 🚀 Commit e push das alterações
