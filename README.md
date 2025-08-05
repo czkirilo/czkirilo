@@ -66,9 +66,9 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 
 🧾 Veja minhas pesquisas no:
 
-- [![Google Scholar](https://img.shields.io/badge/Google_Scholar-4285F4?style=flat-square&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?user=SEU_ID_AQUI)
-- [![ORCID](https://img.shields.io/badge/ORCID-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/SEU_ID_AQUI)
-- [![ResearchGate](https://img.shields.io/badge/ResearchGate-00CCBB?style=flat-square&logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/SEU_NOME)
+- [![Google Scholar](https://img.shields.io/badge/Google_Scholar-4285F4?style=flat-square&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?user=xNS8Qj4AAAAJ&hl=pt-BR)
+- [![ORCID](https://img.shields.io/badge/ORCID-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0000-0001-5667-0861)
+- [![ResearchGate](https://img.shields.io/badge/ResearchGate-00CCBB?style=flat-square&logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/Caique-Kirilo)
 
 ---
 <!--  
