@@ -71,7 +71,7 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
 - [![ResearchGate](https://img.shields.io/badge/ResearchGate-00CCBB?style=flat-square&logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/SEU_NOME)
 
 ---
-
+<!--  
 ## 🎯 Projetos em Destaque
 
 - 🔍 **[Sistema de Previsão Inteligente](https://github.com/seu-projeto)**  
@@ -84,14 +84,14 @@ Sou **Caique Zaneti**, apaixonado por tecnologia, ciência e educação. Atuo co
   _Ferramentas para personalização do ensino_
 
 ---
+-->
 
 ## 📫 Vamos nos conectar!
 
-- 🌐 [Meu Blog ou Portfólio](https://seusite.com)
-- 🧑‍💼 [LinkedIn](https://www.linkedin.com/in/seu-usuario)
-- 🧾 [Currículo Lattes](http://lattes.cnpq.br/SEU_ID)
-- 🐙 [GitHub](https://github.com/SEU_USUARIO_GITHUB)
-- ✉️ caique.zaneti@email.com
+- 🧑‍💼 [LinkedIn](https://www.linkedin.com/in/caiquezaneti/)
+- 🧾 [Currículo Lattes](http://lattes.cnpq.br/3359465052525644)
+- [Instagram](https://www.instagram.com/caiquez/)
+- ✉️ caiquez.kirilo@gmail.com
 
 ---
 
